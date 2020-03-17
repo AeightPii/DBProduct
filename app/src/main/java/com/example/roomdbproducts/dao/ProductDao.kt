@@ -21,5 +21,5 @@ interface ProductDao {
     fun getName(name: String): LiveData<List<Product>>
 
     @Query("Delete From product_table Where id = :id")
-    fun deleteId(id:Int)
+    suspend fun deleteId(id:Int)
 }

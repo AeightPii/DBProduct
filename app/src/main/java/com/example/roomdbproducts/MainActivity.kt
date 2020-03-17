@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
     private val AddWordActivityCode = 1
     private val RangeActivityCode = 2
     private val SearchActivityCode = 3
-    private val deleteActivityCode = 4
+    private val DeleteActivityCode = 4
 
     private lateinit var productViewModel: ProductViewModel
     private val productAdapter = ProductAdapter()
@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
         }
         btn_delete.setOnClickListener {
             val intent = Intent(this@MainActivity, DeleteActivity::class.java)
-            startActivityForResult(intent, deleteActivityCode)
+            startActivityForResult(intent, DeleteActivityCode)
         }
         //  val productAdapter = ProductAdapter()
         recProduct.apply {
@@ -115,17 +115,17 @@ class MainActivity : AppCompatActivity() {
             )
         }
 
-        if (requestCode == deleteActivityCode && resultCode == Activity.RESULT_OK) {
-            var a = data?.getStringExtra(DeleteActivity.EXTRA_REPLY)
-            productViewModel.deleteId(a.toString().toInt())
-//            productViewModel.allProduts.observe(
-//                this, Observer { products ->
-//                    //word refers above allwords
-//                    products?.let {
-//                        productAdapter.setWords(it)
-//                    }
-//                }
-//            )
+        if (requestCode == DeleteActivityCode && resultCode == Activity.RESULT_OK) {
+            var deId = data?.getStringExtra(DeleteActivity.EXTRA_REPLY)
+            productViewModel.deleteId(deId!!.toInt())
+            productViewModel.allProduts.observe(
+                this, Observer { products ->
+                    //word refers above allwords
+                    products?.let {
+                        productAdapter.setWords(it)
+                    }
+                }
+            )
         }
     }
 }

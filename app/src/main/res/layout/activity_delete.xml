@@ -8,6 +8,7 @@
     tools:context=".DeleteActivity">
     <EditText
         android:id="@+id/edt_delete"
+        android:hint="id"
         android:layout_margin="10dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -16,6 +17,7 @@
         android:layout_height="wrap_content"/>
     <Button
         android:id="@+id/btn_preceed_delete"
+        android:text="proceed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/edt_delete"

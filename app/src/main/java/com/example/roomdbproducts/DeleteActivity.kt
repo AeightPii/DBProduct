@@ -21,12 +21,13 @@ class DeleteActivity : AppCompatActivity() {
                 setResult(Activity.RESULT_CANCELED, replyIntent)
             } else {
                 var deId: String = edt_delete.text.toString()
-                replyIntent.putExtra(NameActivity.EXTRA_REPLY, deId)
+                replyIntent.putExtra(DeleteActivity.EXTRA_REPLY, deId)
                 setResult(Activity.RESULT_OK, replyIntent)
                 finish()
             }
         }
     }
+
     companion object {
         const val EXTRA_REPLY = "REPLY_DATA"
     }
