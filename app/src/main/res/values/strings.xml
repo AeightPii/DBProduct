@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">RoomDBProducts</string>
+    <string name="add_products">Add products</string>
+    <string name="james">James</string>
+    <string name="_1200ks">1200ks</string>
+    <string name="add_new_product">Add new product</string>
+    <string name="save">Save</string>
+</resources>
